@@ -1,16 +1,15 @@
 package im.ltdev.cordova;
 
-import org.apache.cordova.CordovaWebView;
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CordovaInterface;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 public class UserAgent extends CordovaPlugin {
 
@@ -22,8 +21,10 @@ public class UserAgent extends CordovaPlugin {
             super.initialize(cordova, webView);
 
             try{
-
-                settings = ((WebView) webView.getEngine().getView()).getSettings();
+                // another solution here https://github.com/miloproductionsinc/cordova-plugin-useragent/blob/master/src/android/UserAgent.java
+                // CordovaWebViewEngine e = webView.getEngine(); // returns null
+                View v = webView.getView();
+                settings = ((WebView)v).getSettings();
 
             }catch (Exception error){
 
