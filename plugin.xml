@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	id="im.ltdev.cordova.UserAgent"
+	id="cordova-plugin-useragent"
 	version="1.0.1">
 	<engines>
 		<engine name="cordova" version=">=4.0.0" />
@@ -22,17 +22,5 @@
 			</feature>
 		</config-file>
 		<source-file src="src/android/UserAgent.java" target-dir="src/im/ltdev/cordova/UserAgent" />
-	</platform>
-	<platform name="ios">
-		<plugins-plist key="UserAgent" string="UserAgent" />
-
-		<config-file target="config.xml" parent="/*">
-			<feature name="UserAgent">
-				<param name="ios-package" value="UserAgent" />
-			</feature>
-		</config-file>
-
-		<header-file src="src/ios/UserAgent.h" />
-		<source-file src="src/ios/UserAgent.m" />
 	</platform>
 </plugin>
